@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gmediasolutions.smartshop">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+
+
+    <application
+        android:name=".FrescoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--First Activity of the project-->
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".LoginActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".WelcomeActivity"/>
+        <activity android:name=".ForgotPassword"/>
+        <activity android:name=".Register"/>
+        <activity android:name=".fragments.ViewPagerActivity"/>
+        <activity android:name=".miscellaneous.EmptyActivity"/>
+        <activity android:name=".product.ItemDetailsActivity"/>
+        <activity android:name=".options.TermsCondActivity"/>
+        <activity android:name=".options.PrivacyPolicyActivity"/>
+        <activity android:name=".options.ContactUsActivity"/>
+        <activity android:name=".options.MyProfileActivity"/>
+
+        <activity
+            android:name=".options.MyWishListActivity"
+            android:label="@string/my_wishlist">
+        </activity>
+        <activity
+            android:name=".options.CartListActivity"
+            android:label="@string/my_cart">
+        </activity>
+        <!-- to identify this activity as "searchable.xml" -->
+        <activity android:name=".options.SearchResultActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+
+        <!--Image crop fragment-->
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
