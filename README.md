@@ -11,3 +11,4 @@ email - admin@domain.com
 password - domain
 
 For demo app play store link is:
+https://play.google.com/store/apps/details?id=com.gmediasolutions.smartshop
